@@ -1,0 +1,25 @@
+server:
+  port: 8080
+  mode: debug
+
+database:
+  host: localhost
+  port: 3306
+  name: wallet_tracker
+
+redis:
+  host: localhost
+  port: 6379
+  db: 0
+  password: ""
+
+blockchain:
+  ethereum:
+    rpc_url: "https://mainnet.infura.io/v3/YOUR_INFURA_KEY"
+  bsc:
+    rpc_url: "https://bsc-dataseed1.binance.org/"
+  polygon:
+    rpc_url: "https://polygon-rpc.com/"
+
+cache:
+  token_balance_ttl: 24h

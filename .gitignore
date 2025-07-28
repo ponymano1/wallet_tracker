@@ -1,3 +1,6 @@
+# Cursor
+.cursor/
+
 # Binaries for programs and plugins
 *.exe
 *.exe~

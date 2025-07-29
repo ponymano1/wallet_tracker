@@ -6,6 +6,14 @@ import (
 	"gorm.io/gorm"
 )
 
+// UserRepositoryInterface defines the interface for user repository operations
+type UserRepositoryInterface interface {
+	Create(user *model.User) (*model.User, error)
+	GetByID(id uint) (*model.User, error)
+	GetByUsername(username string) (*model.User, error)
+	GetByEmail(email string) (*model.User, error)
+}
+
 type UserRepository struct {
 	db *gorm.DB
 }

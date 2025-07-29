@@ -12,11 +12,17 @@ import (
 	"golang.org/x/crypto/bcrypt"
 )
 
-type UserService struct {
-	userRepo *repository.UserRepository
+// UserServiceInterface defines the interface for user service operations
+type UserServiceInterface interface {
+	Register(username, email, password string) (*model.User, error)
+	Login(username, password string) (string, *model.User, error)
 }
 
-func NewUserService(userRepo *repository.UserRepository) *UserService {
+type UserService struct {
+	userRepo repository.UserRepositoryInterface
+}
+
+func NewUserService(userRepo repository.UserRepositoryInterface) *UserService {
 	return &UserService{
 		userRepo: userRepo,
 	}
